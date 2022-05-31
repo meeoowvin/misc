@@ -105,12 +105,12 @@ var animate = (function() {
 	
 	var masterTl = new TimelineMax();
 
-	unsubscribeButton.addEventListener("mouseover", willCancel);
-	cancelButton.addEventListener("mouseover", willUnsubscribe);
-	unsubscribeButton.addEventListener("touchstart", willCancel);
-	cancelButton.addEventListener("touchstart", willUnsubscribe);
-	unsubscribeButton.addEventListener("click", hasCancelled);
-	cancelButton.addEventListener("click", hasUnsubscribed);
+	unsubscribeButton.addEventListener("mouseover", willUnsubscribe);
+	cancelButton.addEventListener("mouseover", willCancel);
+	unsubscribeButton.addEventListener("touchstart", willUnsubscribe);
+	cancelButton.addEventListener("touchstart", willCancel);
+	unsubscribeButton.addEventListener("click", hasUnsubscribed);
+	cancelButton.addEventListener("click", hasCancelled);
 	unsubscribeButton.addEventListener("mouseout", initFace);
 	cancelButton.addEventListener("mouseout", initFace);
 	unsubscribeButton.addEventListener("touchleave", initFace);
@@ -219,8 +219,8 @@ var animate = (function() {
 		TweenMax.to(eyeGroup, speed, {y:10});
 		TweenMax.to(eyebrowSadLeft, speed, {y:0});
 		TweenMax.to(eyebrowSadRight, speed, {y:0});
-		title.innerHTML = "Thanks youuuuu!";
-		subtitle.innerHTML = "You're the best. Yay!";
+		title.innerHTML = "Thanks for staying with us!";
+		subtitle.innerHTML = "You will continue to receive our weekly newsletter. Yay!";
 		unsubscribeButton.style.display = 'none';
 		cancelButton.style.display = 'none';
 		goBackButton.style.display = 'block';
@@ -233,16 +233,16 @@ var animate = (function() {
 		if (!clicked) {
 		var speed = 0.1;
 
-		TweenMax.to(mouthHappy, speed, {morphSVG:mouthHappy, ease: Power0.easeNone});
-		TweenMax.to(mouthHappy, speed, {fill:'none', stroke:'#543093', ease: Power0.easeNone})
+		TweenMax.to(mouthWorry, speed, {morphSVG:mouthWorry, ease: Power0.easeNone});
+		TweenMax.to(mouthWorry, speed, {fill:'none', stroke:'#543093', ease: Power0.easeNone})
 		TweenMax.to(tongue, speed, {css:{display:'none'}, ease: Power0.easeNone})
-		TweenMax.to(eyebrowHappyLeft, speed, {morphSVG:eyebrowHappyLeft, ease: Power0.easeNone});
-		TweenMax.to(eyebrowHappyRight, speed, {morphSVG:eyebrowHappyRight, ease: Power0.easeNone});
+		TweenMax.to(eyebrowSadLeft, speed, {morphSVG:eyebrowSadLeft, ease: Power0.easeNone});
+		TweenMax.to(eyebrowSadRight, speed, {morphSVG:eyebrowSadRight, ease: Power0.easeNone});
 		TweenMax.to(paper, speed, {y:0});
 		TweenMax.to(eyeGroup, speed, {y:0});
 		TweenMax.to(mouth, speed, {y:0});
-		TweenMax.to(eyebrowHappyLeft, speed, {y:0});
-		TweenMax.to(eyebrowHappyRight, speed, {y:0});
+		TweenMax.to(eyebrowSadLeft, speed, {y:0});
+		TweenMax.to(eyebrowSadRight, speed, {y:0});
 		TweenMax.to(eyeLeft, speed, {morphSVG:eyeLeft, ease: Power0.easeNone});
 		TweenMax.to(eyeLeft, speed, {stroke:'none', fill:'#543093', ease: Power0.easeNone});
 		TweenMax.to(eyeRight, speed, {morphSVG:eyeRight, ease: Power0.easeNone});
@@ -259,8 +259,8 @@ var animate = (function() {
 		confettis.forEach(function(el) {
 			TweenMax.set(el, {x:0, y: 0, rotation:0});
 		});
-		title.innerHTML = "Are you sure?";
-		subtitle.innerHTML = "we're sad to see you go";
+		title.innerHTML = "Do you want to unsubscribe?";
+		subtitle.innerHTML = "If you unsubscribe, you will stop receiving our weekly newsletter.";
 		unsubscribeButton.style.display = 'block';
 		cancelButton.style.display = 'block';
 		goBackButton.style.display = 'none';
